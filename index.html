@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Change Cursor to Crosshairs</title>
+    <style media="screen">
+      /* Taken from https://codepen.io/tutsplus/pen/XxdoQK */
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(https://www.askideas.com/media/76/Funny-Meme-Faces-3.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* .cursor-prev {
+        cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/cursor-prev.cur), auto;
+        cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/cursor-prev.svg) 16 16, auto;
+      }
+
+      .cursor-next {
+        cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/cursor-next.cur), auto;
+        cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/cursor-next.svg) 16 16, auto;
+      } */
+
+      .cursor--crosshairs {
+        /* cursor: url(crosshairs.cur), auto; */
+        cursor: url(crosshairs.svg) 16 16, auto;
+      }
+    </style>
+
+    <script type="text/javascript">
+      window.addEventListener("load", init);
+
+      function init() {
+        var areaOfCrosshairs = document.querySelector("body")
+        // var _img$getBoundingClien = areaOfCrosshairs.getBoundingClientRect()
+        // var width = _img$getBoundingClien.width
+        // var halfImgWidth = width / 2;
+
+        areaOfCrosshairs.addEventListener("mousemove", function (e) {
+          // var xPos = e.pageX - img.offsetLeft;
+          this.classList.add("cursor--crosshairs");
+          /*IE11 need this*/
+          //this.classList.remove("cursor-prev");
+          //this.classList.remove("cursor-next");
+          // this.classList.remove("cursor-prev", "cursor-next");
+          // if (xPos > halfImgWidth) {
+          //   this.classList.add("cursor-next");
+          // } else {
+          //   this.classList.add("cursor-prev");
+          // }
+        });
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
